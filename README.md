@@ -96,10 +96,10 @@ Within this project, I included:
 
 ## Links:
 
-- [Link to Github](https://github.com/kellystone4)
+- [Link to Github](https://github.com/kellystone4/weatherApp)
 - [Link to LinkedIn](https://www.linkedin.com/in/kelly-a-stone/)
 
 <br>
 
 ## Deployed Link:
-- [Link to Portfolio Site](https://kellystone4.github.io/generatePass/)
+- [Link to Weather App Site](https://kellystone4.github.io/weatherApp/)
