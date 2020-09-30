@@ -59,7 +59,8 @@ Within this project, I included:
 
   <br>
 
-    ![Image](img_5233.jpeg)
+    ![Image](rd.png)
+    ![Image](red1.png)
 
    <br>
 - Figuring out how to get the Password Generator Button to give output from the coding for the password generator.
