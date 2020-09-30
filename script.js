@@ -1,25 +1,28 @@
 $(document).ready(function() {
+  // click function allows the search button to work and take in the input/value.
+  // $("#button") selects the ID in the html & on click function executes javascript when button is clicked 
   $("#button").on("click", function() {
     var searchValue = $("#value").val();
 
-    // clear input box
+    // clear input box after the button is clicked to allow for clean box for new search results
     $("#value").val("");
-
     searchWeather(searchValue);
   });
-
   $(".history").on("click", "li", function() {
     searchWeather($(this).text());
   });
 
+  // this adds on a list onto the webpage made up of the search history. 
   function makeRow(text) {
     var li = $("<li>").addClass("list-group-item list-group-item-action").text(text);
     $(".history").append(li);
   }
 
-
+// my Open Weather API key:
   var APIKey = "3880af97c5446334c5d4173fc6e08a0d";
 
+  // using the Search Weather url + search value + our API + units=imperial to format in Farenheit 
+  // .ajax function allows for new content to be loaded to the page without reloading the whole website
   function searchWeather(searchValue) {
     $.ajax({
       type: "GET",
@@ -38,16 +41,16 @@ $(document).ready(function() {
         $("#today").empty();
 
         // create html content for current weather
+        // card and body are created through jQuery, along with the text content inside (title, wind, humidity, temperature, img for the icons)
         var card = $("<div>").addClass("card");
         var cardBody = $("<div>").addClass("card-body");
         var title = $("<h3>").addClass("card-title").text(data.name + " (" + new Date().toLocaleDateString() + ")");
         var wind = $("<p>").addClass("card-text").text("Wind Speed: " + data.wind.speed + " MPH");
         var humid = $("<p>").addClass("card-text").text("Humidity: " + data.main.humidity + "%");
         var temp = $("<p>").addClass("card-text").text("Temperature: " + data.main.temp + " °F");
-        var cardBody = $("<div>").addClass("card-body");
         var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
 
-        // merge and add to page
+        // merge and append to the page
         title.append(img);
         cardBody.append(title, temp, humid, wind);
         card.append(cardBody);
@@ -60,6 +63,7 @@ $(document).ready(function() {
     });
   }
   
+  // getting the forecast function(using 5 day/3 hour forecast url)
   function getForecast(searchValue) {
     $.ajax({
       type: "GET",
@@ -94,6 +98,7 @@ $(document).ready(function() {
     });
   }
 
+  // function UV index using the corresponding url 
   function getUVIndex(lat, lon) {
     $.ajax({
       type: "GET",
@@ -119,7 +124,7 @@ $(document).ready(function() {
     });
   }
 
-  // get current history, if any
+  // get current history, if there are any
   var history = JSON.parse(window.localStorage.getItem("history")) || [];
 
   if (history.length > 0) {

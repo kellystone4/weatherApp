@@ -21,6 +21,8 @@
 
 Through this assignment, I focused alot on understanding the code. Since the template was sent to us, I made sure to study it from top to bottom! My last couple of assignments I had alot of trouble with a few of the concepts, and being able to see it in a clear, formatted code was extremely helpful for me to understand what I did wrong in the past. Another thing that was really helpful for me in understanding all the steps to take for this assignment was to try a different kind of pseudo coding. Below, I show a picture of a more descriptive type of psuedo coding than the plain text and lists I had done previously. 
 
+I felt as though many things that I tried to change/take out/add in made the code more complicated and messy. I changed variable names, I decided to explain the code to show my understanding of it.
+
 <br>
 
 
